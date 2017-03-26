@@ -1,0 +1,27 @@
+{%- extends "basic/search.html" %}
+{% block extrahead %}
+{{ super() }}
+<script type="text/javascript">
+function splitQuery(query) {
+    var segmenter = new TinySegmenter();
+    var result = [];
+    var start = -1;
+    for (var i = 0; i < query.length; i++) {
+        if (splitChars[query.charCodeAt(i)]) {
+            if (start !== -1) {
+                var segs = segmenter.segment(query.slice(start, i));
+                result = result.concat(segs);
+                start = -1;
+            }
+        } else if (start === -1) {
+            start = i;
+        }
+    }
+    if (start !== -1) {
+        var segs = segmenter.segment(query.slice(start, i));
+        result = result.concat(segs);
+    }
+    return result.filter(function(s){ return s.length>1; }, result);
+};
+</script>
+{% endblock extrahead %}

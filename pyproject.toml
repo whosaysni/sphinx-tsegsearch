@@ -1,0 +1,35 @@
+[build-system]
+requires = ["poetry-core >= 1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "sphinx-tsegsearch"
+version = "1.1.1"
+description = "Sphinx extension to split searchword with TinySegmenter"
+readme = "README.rst"
+license = "MIT"
+authors = ["Yasushi Masuda <whosaysni@gmail.com>"]
+homepage = "https://github.com/whosaysni/sphinx-tsegsearch/"
+repository = "https://github.com/whosaysni/sphinx-tsegsearch/"
+keywords = ["sphinx", "japanese", "word", "segmentation", "search"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Plugins",
+    "Framework :: Sphinx :: Extension",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Topic :: Documentation :: Sphinx"
+]
+packages = [
+    { include = "sphinx_tsegsearch" },
+    { include = "sphinx_tsegsearch/static/*.js" },
+    { include = "sphinx_tsegsearch/templates/*.html" },
+]
+
+[tool.poetry.dependencies]
+install_requires=['docutils', 'sphinx']
+
+
+

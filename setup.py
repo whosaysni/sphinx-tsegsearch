@@ -8,7 +8,7 @@ import sys
 
 setup(
     name='sphinx-tsegsearch',
-    version='1.0',
+    version='1.1',
     description='Sphinx extension to split searchword with TinySegmenter',
     long_description=sys.modules['__main__'].__doc__,
     url='https://github.com/whosaysni/sphinx-tsegsearch',
